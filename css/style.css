@@ -1150,3 +1150,97 @@ section {
         padding: 1.5rem;
     }
 }
+
+/* ===== Hero Profile Image ===== */
+.hero-image-container {
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-profile-image {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary);
+    box-shadow: 0 20px 60px rgba(217, 141, 140, 0.3);
+    animation: float-image 6s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes float-image {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.hero-image-container .floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-image-container .floating-icons i {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: float-icon 8s ease-in-out infinite;
+    background: rgba(249, 246, 243, 0.9);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero-image-container .floating-icons i:nth-child(1) {
+    top: 5%;
+    left: 0%;
+    color: #ff9900;
+    animation-delay: 0s;
+}
+
+.hero-image-container .floating-icons i:nth-child(2) {
+    top: 70%;
+    right: 0%;
+    color: #2496ed;
+    animation-delay: 2s;
+}
+
+.hero-image-container .floating-icons i:nth-child(3) {
+    bottom: 10%;
+    left: 0%;
+    color: var(--primary);
+    animation-delay: 4s;
+}
+
+.hero-image-container .floating-icons i:nth-child(4) {
+    top: 30%;
+    right: 0%;
+    color: var(--secondary);
+    animation-delay: 6s;
+}
+
+/* Responsive for hero image */
+@media (max-width: 992px) {
+    .hero-profile-image {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-image-container .floating-icons i {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+}
