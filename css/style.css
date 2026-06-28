@@ -79,7 +79,7 @@ a {
     background: var(--secondary);
 }
 
-/* ===== Navigation ===== */
+/* ===== Navigation - Warm Colors, NO GRAY/BLUE ===== */
 .navbar {
     position: fixed;
     top: 0;
@@ -87,9 +87,9 @@ a {
     width: 100%;
     z-index: 1000;
     padding: 1rem 2rem;
-    background: rgba(245, 240, 235, 0.95);
+    background: rgba(245, 240, 235, 0.98);
     backdrop-filter: blur(20px);
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 3px solid var(--primary);
     transition: var(--transition);
 }
 
@@ -155,6 +155,7 @@ a {
     height: 3px;
     background: var(--primary);
     transition: var(--transition);
+    border-radius: 10px;
 }
 
 .nav-links a:hover,
@@ -171,6 +172,92 @@ a {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+/* ===== Theme Button ===== */
+.theme-btn {
+    background: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: rotate(20deg);
+    background: rgba(217, 141, 140, 0.05);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    transition: var(--transition);
+    border-radius: 5px;
+}
+
+/* ===== Mobile Menu ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--card-bg);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.5rem;
+        transition: 0.3s ease;
+        border-top: 3px solid var(--primary);
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links a {
+        font-size: 1.3rem;
+        color: var(--text-primary);
+    }
+    
+    .nav-links a:hover {
+        color: var(--primary-dark);
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
 }
 
 .theme-btn {
