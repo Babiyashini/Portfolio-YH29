@@ -202,3 +202,23 @@ window.addEventListener('scroll', () => {
 
 console.log('Portfolio loaded successfully!');
 console.log('Built with  by Babiyashini Varadaraj');
+
+// ===== Contact Form Handler =====
+const contactForm = document.querySelector('form[action*="formsubmit"]');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        
+        // Show loading state
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Re-enable after 5 seconds (in case of redirect)
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }, 5000);
+    });
+}
