@@ -200,5 +200,5 @@ window.addEventListener('scroll', () => {
     }
 });
 
-console.log('🚀 Portfolio loaded successfully!');
-console.log('👩‍💻 Built with ❤️ by Babiyashini Varadaraj');
+console.log('Portfolio loaded successfully!');
+console.log('Built with  by Babiyashini Varadaraj');
