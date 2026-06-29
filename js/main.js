@@ -1,6 +1,11 @@
 // ===== Typing Effect =====
 const typingText = document.getElementById('typingText');
-const phrases = ['Cloud Engineer', 'AWS Enthusiast', 'Full-Stack Developer', 'Tech Explorer'];
+const phrases = [
+    'Cloud Engineering Enthusiast | Technology Enthusiast',  // First message
+    'AWS Enthusiast',
+    'Full-Stack Developer',
+    'Tech Explorer'
+];
 let phraseIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -18,7 +23,7 @@ function typeEffect() {
     
     if (!isDeleting && charIndex === currentPhrase.length) {
         isDeleting = true;
-        setTimeout(typeEffect, 2000);
+        setTimeout(typeEffect, 3000);  // Wait 3 seconds before deleting
         return;
     }
     
@@ -33,7 +38,9 @@ function typeEffect() {
 }
 
 // Start typing effect
-typeEffect();
+if (typingText) {
+    typeEffect();
+}
 
 // ===== Animated Counters =====
 const statNumbers = document.querySelectorAll('.stat-number');
@@ -123,33 +130,37 @@ window.addEventListener('scroll', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinksContainer = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    navLinksContainer.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
+if (hamburger && navLinksContainer) {
+    hamburger.addEventListener('click', () => {
+        navLinksContainer.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+}
 
 // ===== Theme Toggle =====
 const themeToggle = document.getElementById('themeToggle');
 let isDarkMode = true;
 
-themeToggle.addEventListener('click', () => {
-    isDarkMode = !isDarkMode;
-    const root = document.documentElement;
-    
-    if (isDarkMode) {
-        root.style.setProperty('--bg-primary', '#0a1628');
-        root.style.setProperty('--bg-secondary', '#111f35');
-        root.style.setProperty('--text-primary', '#e8edf5');
-        root.style.setProperty('--text-secondary', '#94a9c9');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    } else {
-        root.style.setProperty('--bg-primary', '#f0f4ff');
-        root.style.setProperty('--bg-secondary', '#ffffff');
-        root.style.setProperty('--text-primary', '#0a1628');
-        root.style.setProperty('--text-secondary', '#2a3a5a');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        const root = document.documentElement;
+        
+        if (isDarkMode) {
+            root.style.setProperty('--bg-primary', '#0a1628');
+            root.style.setProperty('--bg-secondary', '#111f35');
+            root.style.setProperty('--text-primary', '#e8edf5');
+            root.style.setProperty('--text-secondary', '#94a9c9');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            root.style.setProperty('--bg-primary', '#f0f4ff');
+            root.style.setProperty('--bg-secondary', '#ffffff');
+            root.style.setProperty('--text-primary', '#0a1628');
+            root.style.setProperty('--text-secondary', '#2a3a5a');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    });
+}
 
 // ===== Smooth Scroll for Nav Links =====
 navLinks.forEach(link => {
@@ -157,34 +168,18 @@ navLinks.forEach(link => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
         
         // Close mobile menu
-        navLinksContainer.classList.remove('active');
-        hamburger.classList.remove('active');
+        if (navLinksContainer) {
+            navLinksContainer.classList.remove('active');
+        }
+        if (hamburger) {
+            hamburger.classList.remove('active');
+        }
     });
-});
-
-// ===== Contact Form =====
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate sending
-    setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            contactForm.reset();
-        }, 2000);
-    }, 1500);
 });
 
 // ===== Navbar scroll effect =====
@@ -200,25 +195,5 @@ window.addEventListener('scroll', () => {
     }
 });
 
-console.log('Portfolio loaded successfully!');
-console.log('Built with  by Babiyashini Varadaraj');
-
-// ===== Contact Form Handler =====
-const contactForm = document.querySelector('form[action*="formsubmit"]');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        // Show loading state
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        // Re-enable after 5 seconds (in case of redirect)
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 5000);
-    });
-}
+console.log('🚀 Portfolio loaded successfully!');
+console.log('👩‍💻 Built with ❤️ by Babiyashini Varadaraj');
