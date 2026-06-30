@@ -11,14 +11,20 @@
     <link rel="stylesheet" href="css/style.css" />
     <style>
         .project-page {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 8rem 2rem 4rem;
         }
         .project-page h1 {
             font-size: 2.8rem;
             color: var(--heading-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .project-page .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
         }
         .project-page .project-meta {
             display: flex;
@@ -32,21 +38,35 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            background: var(--background);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
         }
         .project-page .project-meta i {
             color: var(--primary);
         }
         .project-page .project-description {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             line-height: 1.8;
             margin-bottom: 2rem;
+        }
+        .project-page h2 {
+            font-size: 1.6rem;
+            color: var(--heading-color);
+            margin: 2rem 0 1rem;
+        }
+        .project-page h3 {
+            font-size: 1.2rem;
+            color: var(--heading-color);
+            margin: 1.5rem 0 0.8rem;
         }
         .project-page .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.8rem;
-            margin-bottom: 2rem;
+            margin: 1rem 0 2rem;
         }
         .project-page .tech-stack .tech-tag {
             background: var(--background);
@@ -70,6 +90,122 @@
             color: var(--primary-dark);
             transform: translateX(-5px);
         }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .feature-list li i {
+            color: var(--primary);
+            margin-top: 0.2rem;
+            min-width: 20px;
+        }
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .outcome-card {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .outcome-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .outcome-card .label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .demo-box {
+            background: var(--background);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 2px solid var(--primary);
+            margin: 1.5rem 0 2rem;
+        }
+        .demo-box h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+        .demo-box p {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .demo-box code {
+            background: var(--card-bg);
+            padding: 0.2rem 0.8rem;
+            border-radius: 6px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 141, 140, 0.4);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .project-page h1 {
+                font-size: 2rem;
+            }
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -78,47 +214,128 @@
             <i class="fas fa-arrow-left"></i> Back to Portfolio
         </a>
         
-        <h1>Inventory Management System</h1>
+        <h1>Pharmacy Inventory Management System</h1>
+        <p class="subtitle">Cloud-Native Pharmacy OS with ML-Powered Demand Forecasting</p>
         
         <div class="project-meta">
             <span><i class="fas fa-calendar-alt"></i> 2024 - Present</span>
             <span><i class="fas fa-code"></i> Python, Flask</span>
-            <span><i class="fas fa-database"></i> PostgreSQL</span>
+            <span><i class="fas fa-database"></i> MySQL (AWS RDS)</span>
+            <span><i class="fas fa-cloud"></i> AWS EC2, S3</span>
             <span><i class="fas fa-box"></i> Docker</span>
+            <span><i class="fas fa-robot"></i> ML - Linear Regression</span>
         </div>
-        
+
+        <!-- Demo Credentials -->
+        <div class="demo-box">
+            <h4>Live Demo Credentials</h4>
+            <p>
+                <strong>Username:</strong> <code>admin</code> &nbsp;|&nbsp; 
+                <strong>Password:</strong> <code>admin123</code>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                <i class="fas fa-shield-alt" style="color: var(--primary);"></i>
+                Secure Connection • Role-Based Access Control • ML Powered
+            </p>
+        </div>
+
+        <!-- Project Overview -->
+        <h2>Project Overview</h2>
         <div class="project-description">
             <p>
-                A comprehensive inventory management solution designed for small to medium businesses.
-                This system provides real-time inventory tracking, automated low-stock alerts,
-                and detailed analytics dashboards.
+                This project presents a complete, cloud-native solution to modernize pharmacy operations. 
+                It is a web-based Pharmacy Inventory Management System designed to tackle critical challenges 
+                like medicine stockouts, expiry losses, and inefficient manual processes for small and 
+                medium-sized pharmacies.
             </p>
-            <br />
-            <p><strong>Key Features:</strong></p>
-            <ul style="list-style: none; padding-left: 1.5rem; margin-top: 0.5rem;">
-                <li style="margin-bottom: 0.5rem;">✅ Real-time inventory updates across multiple locations</li>
-                <li style="margin-bottom: 0.5rem;">✅ Automated reorder alerts and purchase order generation</li>
-                <li style="margin-bottom: 0.5rem;">✅ Comprehensive reporting and analytics dashboard</li>
-                <li style="margin-bottom: 0.5rem;">✅ User roles and permissions for team management</li>
-                <li style="margin-bottom: 0.5rem;">✅ RESTful API for third-party integrations</li>
-            </ul>
-            <br />
-            <p><strong>Technologies Used:</strong></p>
-            <div class="tech-stack" style="margin-top: 0.5rem;">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Flask</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">SQLAlchemy</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Docker Compose</span>
-                <span class="tech-tag">JWT Authentication</span>
-                <span class="tech-tag">Bootstrap 5</span>
+        </div>
+
+        <!-- Key Features -->
+        <h2>Key Features & Capabilities</h2>
+        
+        <h3>Core Management</h3>
+        <ul class="feature-list">
+            <li>
+                <i class="fas fa-check-circle"></i>
+                <div>Efficiently manage medicine records, track sales, generate invoices, and manage supplier information.</div>
+            </li>
+        </ul>
+
+        <h3>Predictive Analytics</h3>
+        <ul class="feature-list">
+            <li>
+                <i class="fas fa-brain"></i>
+                <div>Integrated machine learning module (using Linear Regression) forecasts future medicine demand based on historical sales data, aiding in smarter purchasing decisions and reducing waste.</div>
+            </li>
+        </ul>
+
+        <h3>Modern DevOps & Cloud Architecture</h3>
+        <ul class="feature-list">
+            <li>
+                <i class="fas fa-rocket"></i>
+                <div><strong>Automated Deployment (CI/CD):</strong> A pipeline using GitHub Actions automatically deploys code changes to the cloud in under 30 seconds.</div>
+            </li>
+            <li>
+                <i class="fas fa-docker"></i>
+                <div><strong>Containerization:</strong> The application is packaged with Docker for consistent performance across all environments.</div>
+            </li>
+            <li>
+                <i class="fas fa-cloud"></i>
+                <div><strong>Cloud Infrastructure:</strong> Deployed on AWS (EC2, RDS, S3) using Terraform (Infrastructure as Code) for a reproducible and scalable setup.</div>
+            </li>
+            <li>
+                <i class="fas fa-heartbeat"></i>
+                <div><strong>Self-Healing & Security:</strong> An auto-healing script ensures the application restarts automatically if it crashes, and HTTPS security is implemented with an SSL certificate from Let's Encrypt.</div>
+            </li>
+        </ul>
+
+        <!-- Technology Stack -->
+        <h2>Technology Stack & Deployment</h2>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">GitHub Actions</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">AWS EC2</span>
+            <span class="tech-tag">AWS RDS</span>
+            <span class="tech-tag">AWS S3</span>
+            <span class="tech-tag">Terraform</span>
+            <span class="tech-tag">ML - Linear Regression</span>
+        </div>
+
+        <!-- Project Outcomes -->
+        <h2>Project Outcomes</h2>
+        <div class="outcome-grid">
+            <div class="outcome-card">
+                <div class="number">4.6/5</div>
+                <div class="label">User Satisfaction Rating</div>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem;">In user acceptance testing with pharmacy staff</p>
+            </div>
+            <div class="outcome-card">
+                <div class="number">100%</div>
+                <div class="label">Test Pass Rate</div>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem;">Unit and integration tests</p>
+            </div>
+            <div class="outcome-card">
+                <div class="number">&lt; 30s</div>
+                <div class="label">Deployment Time</div>
+                <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem;">CI/CD pipeline with GitHub Actions</p>
             </div>
         </div>
-        
-        <a href="#" class="btn-primary">
-            <i class="fab fa-github"></i> View Source Code
-        </a>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+            <a href="https://pharmacy-inventory.duckdns.org/login" target="_blank" class="btn-primary">
+                <i class="fas fa-external-link-alt"></i> View Live Demo
+            </a>
+            <a href="#" class="btn-secondary">
+                <i class="fab fa-github"></i> Private Repository
+            </a>
+        </div>
     </div>
 </body>
 </html>
