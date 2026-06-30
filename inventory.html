@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management System - Babiyashini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .project-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        .project-page h1 {
+            font-size: 2.8rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+        .project-page .project-meta {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .project-page .project-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .project-page .project-meta i {
+            color: var(--primary);
+        }
+        .project-page .project-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .project-page .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        .project-page .tech-stack .tech-tag {
+            background: var(--background);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="project-page">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+        
+        <h1>Inventory Management System</h1>
+        
+        <div class="project-meta">
+            <span><i class="fas fa-calendar-alt"></i> 2024 - Present</span>
+            <span><i class="fas fa-code"></i> Python, Flask</span>
+            <span><i class="fas fa-database"></i> PostgreSQL</span>
+            <span><i class="fas fa-box"></i> Docker</span>
+        </div>
+        
+        <div class="project-description">
+            <p>
+                A comprehensive inventory management solution designed for small to medium businesses.
+                This system provides real-time inventory tracking, automated low-stock alerts,
+                and detailed analytics dashboards.
+            </p>
+            <br />
+            <p><strong>Key Features:</strong></p>
+            <ul style="list-style: none; padding-left: 1.5rem; margin-top: 0.5rem;">
+                <li style="margin-bottom: 0.5rem;">✅ Real-time inventory updates across multiple locations</li>
+                <li style="margin-bottom: 0.5rem;">✅ Automated reorder alerts and purchase order generation</li>
+                <li style="margin-bottom: 0.5rem;">✅ Comprehensive reporting and analytics dashboard</li>
+                <li style="margin-bottom: 0.5rem;">✅ User roles and permissions for team management</li>
+                <li style="margin-bottom: 0.5rem;">✅ RESTful API for third-party integrations</li>
+            </ul>
+            <br />
+            <p><strong>Technologies Used:</strong></p>
+            <div class="tech-stack" style="margin-top: 0.5rem;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SQLAlchemy</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Docker Compose</span>
+                <span class="tech-tag">JWT Authentication</span>
+                <span class="tech-tag">Bootstrap 5</span>
+            </div>
+        </div>
+        
+        <a href="#" class="btn-primary">
+            <i class="fab fa-github"></i> View Source Code
+        </a>
+    </div>
+</body>
+</html>
