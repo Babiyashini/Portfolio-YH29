@@ -260,38 +260,6 @@ a {
     }
 }
 
-.theme-btn {
-    background: transparent;
-    border: 2px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 0.5rem;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 1.1rem;
-}
-
-.theme-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-    transform: rotate(20deg);
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: var(--text-primary);
-    transition: var(--transition);
-}
-
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;
