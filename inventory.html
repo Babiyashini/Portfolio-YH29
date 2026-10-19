@@ -131,73 +131,6 @@
             color: var(--text-secondary);
             font-weight: 500;
         }
-        .demo-box {
-            background: var(--background);
-            padding: 1.5rem;
-            border-radius: 16px;
-            border: 2px solid var(--primary);
-            margin: 1.5rem 0 2rem;
-        }
-        .demo-box h4 {
-            color: var(--heading-color);
-            margin-bottom: 0.5rem;
-        }
-        .demo-box p {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-        .demo-box code {
-            background: var(--card-bg);
-            padding: 0.2rem 0.8rem;
-            border-radius: 6px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--gradient-primary);
-            color: #ffffff;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(217, 141, 140, 0.4);
-        }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-primary);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            font-size: 1rem;
-            text-decoration: none;
-        }
-        .btn-secondary:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
         @media (max-width: 768px) {
             .project-page h1 {
                 font-size: 2rem;
@@ -213,10 +146,10 @@
         <a href="index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Portfolio
         </a>
-        
+
         <h1>Pharmacy Inventory Management System</h1>
         <p class="subtitle">Cloud-Native Pharmacy OS with ML-Powered Demand Forecasting</p>
-        
+
         <div class="project-meta">
             <span><i class="fas fa-calendar-alt"></i> 2024 - Present</span>
             <span><i class="fas fa-code"></i> Python, Flask</span>
@@ -226,33 +159,20 @@
             <span><i class="fas fa-robot"></i> ML - Linear Regression</span>
         </div>
 
-        <!-- Demo Credentials -->
-        <div class="demo-box">
-            <h4>Live Demo Credentials</h4>
-            <p>
-                <strong>Username:</strong> <code>admin</code> &nbsp;|&nbsp; 
-                <strong>Password:</strong> <code>admin123</code>
-            </p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                <i class="fas fa-shield-alt" style="color: var(--primary);"></i>
-                Secure Connection • Role-Based Access Control • ML Powered
-            </p>
-        </div>
-
         <!-- Project Overview -->
         <h2>Project Overview</h2>
         <div class="project-description">
             <p>
-                This project presents a complete, cloud-native solution to modernize pharmacy operations. 
-                It is a web-based Pharmacy Inventory Management System designed to tackle critical challenges 
-                like medicine stockouts, expiry losses, and inefficient manual processes for small and 
+                This project presents a complete, cloud-native solution to modernize pharmacy operations.
+                It is a web-based Pharmacy Inventory Management System designed to tackle critical challenges
+                like medicine stockouts, expiry losses, and inefficient manual processes for small and
                 medium-sized pharmacies.
             </p>
         </div>
 
         <!-- Key Features -->
         <h2>Key Features & Capabilities</h2>
-        
+
         <h3>Core Management</h3>
         <ul class="feature-list">
             <li>
@@ -325,13 +245,6 @@
                 <div class="label">Deployment Time</div>
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem;">CI/CD pipeline with GitHub Actions</p>
             </div>
-        </div>
-
-        <!-- Buttons -->
-        <div class="btn-group">
-            <a href="https://pharmacy-inventory.duckdns.org/login" target="_blank" class="btn-primary">
-                <i class="fas fa-external-link-alt"></i> View Live Demo
-            </a>
         </div>
     </div>
 </body>
