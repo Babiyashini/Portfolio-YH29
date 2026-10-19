@@ -131,30 +131,34 @@
             color: var(--text-secondary);
             font-weight: 500;
         }
-        .btn-group {
+        .project-page .btn-group {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin: 2rem 0;
+            justify-content: center;
+            margin: 2rem 0 0;
         }
-        .btn-primary {
+        .project-page .btn-primary {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             background: var(--gradient-primary);
             color: #ffffff;
-            padding: 0.8rem 2rem;
+            padding: 0.9rem 2.2rem;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             font-size: 1rem;
             text-decoration: none;
+            width: auto;
+            position: static;
         }
-        .btn-primary:hover {
+        .project-page .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(217, 141, 140, 0.4);
+            box-shadow: 0 10px 30px rgba(217, 141, 140, 0.5);
+            color: #ffffff;
         }
         @media (max-width: 768px) {
             .project-page h1 {
