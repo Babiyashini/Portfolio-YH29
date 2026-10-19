@@ -131,6 +131,31 @@
             color: var(--text-secondary);
             font-weight: 500;
         }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(217, 141, 140, 0.4);
+        }
         @media (max-width: 768px) {
             .project-page h1 {
                 font-size: 2rem;
@@ -246,12 +271,13 @@
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.3rem;">CI/CD pipeline with GitHub Actions</p>
             </div>
         </div>
-    </div>
-            <!-- Thesis Document -->
+
+        <!-- Thesis Document -->
         <div class="btn-group">
             <a href="assets/thesis/cloud-thesis.pdf" target="_blank" rel="noopener" class="btn-primary">
                 <i class="fas fa-file-pdf"></i> View Thesis (PDF)
             </a>
         </div>
+    </div>
 </body>
 </html>
