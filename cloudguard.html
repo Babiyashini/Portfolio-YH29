@@ -1,0 +1,74 @@
+<section class="project-detail">
+    <a href="index.html#projects" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Projects
+    </a>
+
+    <div class="section-header">
+        <h2>CloudGuard Lite</h2>
+        <div class="section-line"></div>
+    </div>
+
+    <p>A lightweight, rule-based AWS security scanner.</p>
+
+    <div class="project-tech">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">AWS</span>
+        <span class="tech-tag">Boto3</span>
+        <span class="tech-tag">Jinja2</span>
+    </div>
+
+    <h3>🔍 The Problem</h3>
+    <p>
+        Manual AWS security reviews are slow and easy to miss. Small teams often
+        deploy public S3 buckets, over-permissive IAM roles, or open security
+        groups without realizing it.
+    </p>
+
+    <h3>💡 The Solution</h3>
+    <p>
+        CloudGuard Lite scans AWS configurations against a set of security rules
+        and generates a clean HTML report with severity ratings, affected resources,
+        and remediation recommendations.
+    </p>
+
+    <h3>🛡️ Rules Implemented</h3>
+    <ul>
+        <li>Public S3 bucket ACLs</li>
+        <li>S3 buckets without encryption</li>
+        <li>Security groups open to 0.0.0.0/0 on sensitive ports</li>
+        <li>IAM users without MFA</li>
+        <li>Over-permissive IAM policies</li>
+        <li>Missing CloudTrail logging</li>
+    </ul>
+
+    <h3>⚙️ How It Works</h3>
+    <p>
+        AWS Account (or sample JSON) → Boto3 scanners → Rule engine → Flask + Jinja2 report
+    </p>
+
+    <h3>📚 What I Learned</h3>
+    <ul>
+        <li>Writing least-privilege IAM policies for the scanner itself</li>
+        <li>Designing a modular rule engine (each rule = one Python function)</li>
+        <li>Rendering dynamic HTML reports safely with Jinja2</li>
+        <li>Understanding real AWS misconfiguration patterns attackers exploit</li>
+    </ul>
+
+    <h3>🚀 What's Next</h3>
+    <ul>
+        <li>Add CIS AWS Foundations Benchmark rules</li>
+        <li>Export findings as JSON / CSV</li>
+        <li>Deploy as a Lambda function on a schedule</li>
+    </ul>
+
+    <div class="project-links">
+        <a href="https://github.com/Babiyashini/cloudguard-lite" target="_blank" class="project-link">
+            <i class="fab fa-github"></i> Source Code
+        </a>
+    </div>
+
+    <p style="margin-top: 2rem; color: #64748b;">
+        Demo only — this tool checks selected rules, not every AWS security risk.
+    </p>
+</section>
