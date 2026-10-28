@@ -74,19 +74,14 @@
                     <i class="fab fa-github"></i> Source Code
                 </a>
             </div>
-
-            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 2rem;">
-                ⏱️ Live demo may take ~1 min to wake up on first visit (free tier)
-            </p>
-
-            <h3 style="margin-top: 2rem;">🔍 The Problem</h3>
+            <h3 style="margin-top: 2rem;">The Problem</h3>
             <p>
                 Manual AWS security reviews are slow and easy to miss. Small teams often
                 deploy public S3 buckets, over-permissive IAM roles, or open security
                 groups without realizing it — leading to data exposure or unauthorized access.
             </p>
 
-            <h3 style="margin-top: 2rem;">💡 The Solution</h3>
+            <h3 style="margin-top: 2rem;">The Solution</h3>
             <p>
                 CloudGuard Lite scans AWS configurations against a set of security rules
                 and generates a clean HTML report showing:
@@ -98,7 +93,7 @@
                 <li>A <strong>recommendation</strong> on how to fix it</li>
             </ul>
 
-            <h3 style="margin-top: 2rem;">🛡️ Rules Implemented</h3>
+            <h3 style="margin-top: 2rem;">Rules Implemented</h3>
             <ul>
                 <li>Public S3 bucket ACLs</li>
                 <li>S3 buckets without encryption</li>
@@ -108,13 +103,13 @@
                 <li>Missing CloudTrail logging</li>
             </ul>
 
-            <h3 style="margin-top: 2rem;">⚙️ How It Works</h3>
+            <h3 style="margin-top: 2rem;">How It Works</h3>
             <p>
                 <code>AWS Account (or sample JSON)</code> → <code>Boto3 scanners</code> → 
                 <code>Rule engine</code> → <code>Flask + Jinja2 report</code>
             </p>
 
-            <h3 style="margin-top: 2rem;">📚 What I Learned</h3>
+            <h3 style="margin-top: 2rem;">What I Learned</h3>
             <ul>
                 <li>Writing least-privilege IAM policies for the scanner itself</li>
                 <li>Designing a modular rule engine (each rule = one Python function)</li>
@@ -123,7 +118,7 @@
                 <li>Containerizing a Flask app with Docker and deploying it to a live host</li>
             </ul>
 
-            <h3 style="margin-top: 2rem;">🚀 What's Next</h3>
+            <h3 style="margin-top: 2rem;">What's Next</h3>
             <ul>
                 <li>Add CIS AWS Foundations Benchmark rules</li>
                 <li>Export findings as JSON / CSV for SIEM integration</li>
