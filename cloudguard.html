@@ -1,81 +1,154 @@
-<section class="project-detail">
-    <a href="index.html#projects" class="back-link">
-        <i class="fas fa-arrow-left"></i> Back to Projects
-    </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudGuard Lite · Babiyashini Varadaraj</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">BV</span>
+                <span class="logo-dot"></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects" class="active">Projects</a></li>
+                <li><a href="index.html#certifications">Certifications</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="section-header">
-        <h2>CloudGuard Lite</h2>
-        <div class="section-line"></div>
-    </div>
+    <!-- CloudGuard Lite Detail Page -->
+    <section class="project-detail" style="padding-top: 120px;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
 
-    <p>A lightweight, rule-based AWS security scanner.</p>
+            <a href="index.html#projects" class="back-link" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; margin-bottom: 2rem; font-weight: 500;">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
 
-    <div class="project-tech">
-        <span class="tech-tag">Python</span>
-        <span class="tech-tag">Flask</span>
-        <span class="tech-tag">AWS</span>
-        <span class="tech-tag">Boto3</span>
-        <span class="tech-tag">Jinja2</span>
-    </div>
+            <div class="section-header">
+                <h2>CloudGuard Lite</h2>
+                <div class="section-line"></div>
+            </div>
 
-    <h3>🔍 The Problem</h3>
-    <p>
-        Manual AWS security reviews are slow and easy to miss. Small teams often
-        deploy public S3 buckets, over-permissive IAM roles, or open security
-        groups without realizing it.
-    </p>
+            <p style="font-size: 1.15rem; color: #64748b; margin-bottom: 2rem;">
+                A lightweight, rule-based AWS security scanner that detects cloud misconfigurations and generates a clean HTML report with severity ratings and remediation guidance.
+            </p>
 
-    <h3>💡 The Solution</h3>
-    <p>
-        CloudGuard Lite scans AWS configurations against a set of security rules
-        and generates a clean HTML report with severity ratings, affected resources,
-        and remediation recommendations.
-    </p>
+            <div class="project-tech" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem;">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Boto3</span>
+                <span class="tech-tag">Jinja2</span>
+                <span class="tech-tag">Docker</span>
+            </div>
 
-    <h3>🛡️ Rules Implemented</h3>
-    <ul>
-        <li>Public S3 bucket ACLs</li>
-        <li>S3 buckets without encryption</li>
-        <li>Security groups open to 0.0.0.0/0 on sensitive ports</li>
-        <li>IAM users without MFA</li>
-        <li>Over-permissive IAM policies</li>
-        <li>Missing CloudTrail logging</li>
-    </ul>
+            <!-- Live Demo Button -->
+            <div class="project-links" style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 3rem;">
+                <a href="https://cloudguard-lite-1ef3a.containers.snapdeploy.app" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--primary, #2563eb); color: white; border-radius: 8px; text-decoration: none; font-weight: 500;">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/Babiyashini/cloudguard-lite" target="_blank" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: 2px solid var(--primary, #2563eb); color: var(--primary, #2563eb); border-radius: 8px; text-decoration: none; font-weight: 500;">
+                    <i class="fab fa-github"></i> Source Code
+                </a>
+            </div>
 
-    <h3>⚙️ How It Works</h3>
-    <p>
-        AWS Account (or sample JSON) → Boto3 scanners → Rule engine → Flask + Jinja2 report
-    </p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 2rem;">
+                ⏱️ Live demo may take ~1 min to wake up on first visit (free tier)
+            </p>
 
-    <h3>📚 What I Learned</h3>
-    <ul>
-        <li>Writing least-privilege IAM policies for the scanner itself</li>
-        <li>Designing a modular rule engine (each rule = one Python function)</li>
-        <li>Rendering dynamic HTML reports safely with Jinja2</li>
-        <li>Understanding real AWS misconfiguration patterns attackers exploit</li>
-    </ul>
+            <h3 style="margin-top: 2rem;">🔍 The Problem</h3>
+            <p>
+                Manual AWS security reviews are slow and easy to miss. Small teams often
+                deploy public S3 buckets, over-permissive IAM roles, or open security
+                groups without realizing it — leading to data exposure or unauthorized access.
+            </p>
 
-    <h3>🚀 What's Next</h3>
-    <ul>
-        <li>Add CIS AWS Foundations Benchmark rules</li>
-        <li>Export findings as JSON / CSV</li>
-        <li>Deploy as a Lambda function on a schedule</li>
-    </ul>
+            <h3 style="margin-top: 2rem;">💡 The Solution</h3>
+            <p>
+                CloudGuard Lite scans AWS configurations against a set of security rules
+                and generates a clean HTML report showing:
+            </p>
+            <ul>
+                <li><strong>Total findings</strong> and <strong>high-severity count</strong></li>
+                <li>Each finding with its <strong>rule ID</strong> and <strong>severity</strong></li>
+                <li>The <strong>affected resource</strong> (e.g., bucket name, IAM role)</li>
+                <li>A <strong>recommendation</strong> on how to fix it</li>
+            </ul>
 
-    <div class="project-links">
-    <a href="https://cloudguard-lite-1ef3a.containers.snapdeploy.app" target="_blank" class="project-link">
-        <i class="fas fa-external-link-alt"></i> Live Demo
-    </a>
-    <a href="https://github.com/Babiyashini/cloudguard-lite" target="_blank" class="project-link">
-        <i class="fab fa-github"></i> Source Code
-    </a>
-</div>
+            <h3 style="margin-top: 2rem;">🛡️ Rules Implemented</h3>
+            <ul>
+                <li>Public S3 bucket ACLs</li>
+                <li>S3 buckets without encryption</li>
+                <li>Security groups open to <code>0.0.0.0/0</code> on sensitive ports</li>
+                <li>IAM users without MFA</li>
+                <li>Over-permissive IAM policies</li>
+                <li>Missing CloudTrail logging</li>
+            </ul>
 
-<p style="margin-top: 1rem; color: #64748b; font-size: 0.85rem;">
-    ⏱️ Live demo may take ~1 min to wake up on first visit (free tier)
-</p>
+            <h3 style="margin-top: 2rem;">⚙️ How It Works</h3>
+            <p>
+                <code>AWS Account (or sample JSON)</code> → <code>Boto3 scanners</code> → 
+                <code>Rule engine</code> → <code>Flask + Jinja2 report</code>
+            </p>
 
-    <p style="margin-top: 2rem; color: #64748b;">
-        Demo only — this tool checks selected rules, not every AWS security risk.
-    </p>
-</section>
+            <h3 style="margin-top: 2rem;">📚 What I Learned</h3>
+            <ul>
+                <li>Writing least-privilege IAM policies for the scanner itself</li>
+                <li>Designing a modular rule engine (each rule = one Python function)</li>
+                <li>Rendering dynamic HTML reports safely with Jinja2</li>
+                <li>Understanding real AWS misconfiguration patterns attackers exploit</li>
+                <li>Containerizing a Flask app with Docker and deploying it to a live host</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🚀 What's Next</h3>
+            <ul>
+                <li>Add CIS AWS Foundations Benchmark rules</li>
+                <li>Export findings as JSON / CSV for SIEM integration</li>
+                <li>Deploy the scanner as a Lambda function on a schedule</li>
+            </ul>
+
+            <p style="margin-top: 3rem; color: #64748b; font-style: italic;">
+                Demo only — this tool checks selected rules, not every AWS security risk.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Babiyashini Varadaraj. Built with <i class="fas fa-cloud" style="color: #D98D8C;"></i></p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/in/babiyashinivaradaraj" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Babiyashini" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://dev.to/yashi29" target="_blank"><i class="fab fa-dev"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
